@@ -18,7 +18,8 @@
 .page-cycle-left, 
 .page-cycle-right,
 .slider-left-btn,
-.slider-right-btn {
+.slider-right-btn,
+.weights-reset-button {
     background-color: var(--panel-color);
     color: black;
     font-size: 3rem;
@@ -57,4 +58,19 @@
 .slider-right-btn:hover {
     cursor: pointer;
     opacity: 0.85;
+}
+
+.category-weights-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weights-reset-button {
+    font-size: 1.5rem;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
 }

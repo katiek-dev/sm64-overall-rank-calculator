@@ -6,6 +6,17 @@ const overallLeaderboardNavPanel = document.querySelector(".overall-lb-nav-panel
 const overallLeaderboardContainer = document.querySelector(".overall-leaderboard-container");
 const overallLeaderboardPlacementsContainer = document.querySelector(".overall-leaderboard-placements-container")
 
+/* Functionality for the overall leaderboard button */
+overallLeaderboardButton.addEventListener('click', () => {
+    // console.log("lb button clicked");
+    categoryWeightsContainer.classList.add("hidden");
+    overallLeaderboardNavPanel.classList.remove("hidden");
+    overallLeaderboardContainer.classList.remove("hidden");
+    // Display the overall leaderboard
+    calculateOverallLeaderboard();
+});
+
+
 /* Using the variables for the 5 categories, sort the overall leaderboard (AKA
  * the usersAndPointsArray) based on the category weights */
 function calculateOverallLeaderboard() {
@@ -39,15 +50,6 @@ function calculateOverallLeaderboard() {
     }
 }
 
-/* Functionality for the overall leaderboard button */
-overallLeaderboardButton.addEventListener('click', () => {
-    // console.log("lb button clicked");
-    categoryWeightsContainer.classList.add("hidden");
-    overallLeaderboardNavPanel.classList.remove("hidden");
-    overallLeaderboardContainer.classList.remove("hidden");
-    // Display the overall leaderboard
-    calculateOverallLeaderboard();
-});
 
 /* Function to visually display an overall leaderboard placement in the DOM */
 function visuallyAddPlacement(placement, name, points, icon, playerColors, ranks) {
