@@ -1,12 +1,12 @@
 /* This is the code for fetching and then organizing the data for the usersAndPoints array after
  * fetching data from the speedrun.com rest API */
 
-/* Function to that returns the desired amount of  leaderboard placements for a given category ID
- * and game ID. It will return an array of sorted javascript objects that represent runs that
- * will have the name of the runner, time of the run, and if it was emulator or vc. It will also
- * include a "ConsoleEquivalentTime" which is the time converted to console using the offsets from the
- * state.js file */
-async function fetchLeaderboardPlacements(categoryID, gameID) {
+/* Function to fetch data for a given category. This function will fetch console, emu, and wii vc runs,
+ * and using helper functions from this same file will create what is essentially a combined leaderboard
+ * of console, emu, and vc runs taking the best from each category each given player. So if a player
+ * has a time in both console and emu, using the offsets in state.js file it will calculate which of them
+ * is better and use that time for the combined leaderbard */
+async function fetchDataAndCreateCombineLeaderboard(categoryID, gameID) {
     try {
         /* Console, Emulator, and WiiVC times */
         const [resConsolePlacements, resEmuPlacements, resWiiVcPlacements] = await Promise.all([
@@ -36,7 +36,7 @@ async function fetchLeaderboardPlacements(categoryID, gameID) {
 
         /* using the createCombinedLeaderboard function, create a combined leaderboard with the three platforms,
          * assign that combined leaderboard to this value */
-        let combinedLeaderboard = createCombinedLeaderboard(consoleData, emuData, wiiVcData, categoryID);
+        let combinedLeaderboard = combineLeaderboards(consoleData, emuData, wiiVcData, categoryID);
     
         /* Sort the combinedLeaderboard in ascending order */
         combinedLeaderboard.sort((a, b) => a.consoleEquivalentTime - b.consoleEquivalentTime)
@@ -54,8 +54,7 @@ async function fetchLeaderboardPlacements(categoryID, gameID) {
 
 /* This function takes one or more leaderboards and "Combines them" based on the offsets 
  * for the emu, vc, and console leaderboards */
-function createCombinedLeaderboard(consoleData, emuData, wiiVcData, categoryID) {
-
+function combineLeaderboards(consoleData, emuData, wiiVcData, categoryID) {
     /* create an array of objects that will each represent a run and 
      * how long it took in seconds */
     const runsArray = [];
@@ -202,22 +201,5 @@ function loopThroughDataAndAddToRunsAway(platformData, runsArray, categoryID) {
     }
 }
 
-/* Helper method for turning category ID's into their string form */
-function CategoryIDtoString(categoryID) {
-    switch (categoryID) {
-        case CATEGORY_120_STAR_ID:
-            return "120 Star";
-        case CATEGORY_70_STAR_ID:
-            return "70 Star";
-        case CATEGORY_16_STAR_ID:
-            return "16 Star";
-        case CATEGORY_1_STAR_ID:
-            return "1 Star";
-        case CATEGORY_0_STAR_ID:
-            return "0 Star";
-        default:
-            return "Not found.";
-    }
-}
 
 

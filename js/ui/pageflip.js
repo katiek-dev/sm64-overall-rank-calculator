@@ -18,10 +18,10 @@ function visuallyDisplayPage(pageNum) {
     bottomPlacement = pageNum * 50; // What the bottom of the page will have
     topPlacement = bottomPlacement - 49; // What the top of the page will have
     for (let i = topPlacement; i <= bottomPlacement; i++) {
-        if (usersAndPointsArray[i-1] !== undefined) { // Make sure its defined
-            let user = usersAndPointsArray[i - 1];
-            visuallyAddPlacement(i, user.name, user.points, user.icon, user.colors, user.ranks);
-            // console.log(`visually adding player ${usersAndPointsArray[i-1].name} with colors ${usersAndPointsArray[i-1].playerColors}`);
+        if (overallLeaderboardArray[i-1] !== undefined) { // Make sure its defined
+            let user = overallLeaderboardArray[i - 1];
+            visuallyAddPlacement(i, user.name, user.icon, user.colors, user.ranks);
+            // console.log(`visually adding player ${overallLeaderboardArray[i-1].name} with colors ${overallLeaderboardArray[i-1].playerColors}`);
             isOnFinalPage = false;
         } else { // Otherwise if it's not defined that means that this is the final placement and we are on the final page
             isOnFinalPage = true;

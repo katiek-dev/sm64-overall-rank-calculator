@@ -11,8 +11,8 @@ function searchPlayer(event) {
     if ( (event.type === "keydown" && event.key === "Enter") || (event.type === "click") ) {
         const playerNameToSearch = searchTextField.value;
         // console.log(`Searching for ${playerNameToSearch}`);
-        // Check if the usersAndPointsArray contains the name (ignore case sensitivity)
-        const indexOfPlayer = usersAndPointsArray.findIndex(obj => obj.name.toLowerCase() === playerNameToSearch.toLowerCase());
+        // Check if the overallLeaderboardArray contains the name (ignore case sensitivity)
+        const indexOfPlayer = overallLeaderboardArray.findIndex(obj => obj.name.toLowerCase() === playerNameToSearch.toLowerCase());
         // console.log(indexOfPlayer);
         if (indexOfPlayer != -1) { // If it's not -1, then we found the player name
             // Find the page that this would be on using the index
