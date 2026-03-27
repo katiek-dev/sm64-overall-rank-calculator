@@ -11,7 +11,7 @@
 
 .player-search-bar input {
     font-size: 2rem;
-    font-family: cursive;
+    font-family: "Comic Sans MS", "Comic Neue", "Segoe Print", "Trebuchet MS", sans-serif;
     /* border-style: inset;
     border-top-color: #705713;
     border-right-color: #49390d;
@@ -35,7 +35,7 @@
 
 .player-search-bar button {
     font-size: 2rem;
-    font-family: cursive;
+    font-family: "Comic Sans MS", "Comic Neue", "Segoe Print", "Trebuchet MS", sans-serif;
     color: black;
     background-color: var(--panel-color);
     /* border-left-color: #474d45;
