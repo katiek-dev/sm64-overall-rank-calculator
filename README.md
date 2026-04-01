@@ -15,7 +15,19 @@ To run this app, you can either go to the github pages site here: https://katiek
 
 OR you can clone the repo on your local machine and start it from the index.html file as well. All code is client sided javascript.
 
+## Snapshots
+
+### Overall leaderboard
+<img width="648" height="844" alt="image" src="https://github.com/user-attachments/assets/a51a6a03-f30d-4b3c-8b22-9211e10928e9" />
+
+### Title & Navigation
+<img width="717" height="259" alt="image" src="https://github.com/user-attachments/assets/1c10ef6a-09b5-4610-826a-d83abb12559e" />
+
+### Category Weights
+<img width="628" height="838" alt="image" src="https://github.com/user-attachments/assets/d19cba85-81cf-47d0-a0fa-715accffe46c" />
+
 ## Acknowledgments/Credits
 - Project developed by Katie Keller (https://github.com/katiek-dev)
 - Icons sourced from Font Awesome (https://fontawesome.com)
 - User icons sourced from Freepik (https://www.flaticon.com/free-icons/user)
+
